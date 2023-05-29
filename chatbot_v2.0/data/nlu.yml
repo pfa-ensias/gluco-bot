@@ -1,0 +1,76 @@
+
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hello
+    - Hey there
+    - Good morning
+
+- intent: goodbye
+  examples: |
+    - Goodbye
+    - Bye
+    - See you later
+    - Take care
+
+- intent: ask_diabetes_info
+  examples: |
+    - What is diabetes?
+    - Can you tell me about diabetes?
+    - Explain diabetes to me
+
+- intent: ask_diabetes_types
+  examples: |
+    - What are the types of diabetes?
+    - Tell me about different types of diabetes
+    - What is type 1 diabetes?
+    - What is type 2 diabetes?
+
+- intent: ask_management_tips
+  examples: |
+    - How can I manage diabetes?
+    - Give me some tips for managing diabetes
+    - What are the best practices for diabetes management?
+    - How to control blood sugar levels?
+
+- intent: ask_insulin
+  examples: |
+    - How does insulin work?
+    - Tell me about insulin
+    - What are the different types of insulin?
+    - How do I take insulin injections?
+
+- intent: ask_diet_recommendation
+  examples: |
+    - What should I eat if I have diabetes?
+    - Can you suggest a diabetic-friendly diet?
+    - Give me some dietary recommendations for diabetes
+
+- intent: ask_exercise_benefits
+  examples: |
+    - What are the benefits of exercise for diabetes?
+    - How does exercise help in managing diabetes?
+    - What types of exercises are recommended for diabetics?
+
+- intent: ask_glucose_monitoring
+  examples: |
+    - How do I monitor my blood glucose levels?
+    - What are the different glucose monitoring devices available?
+    - Tell me about continuous glucose monitoring (CGM)
+
+- intent: thank
+  examples: |
+    - Thank you
+    - Thanks a lot
+    - I appreciate your help
+    - Thanks for the information
+
+- intent: deny
+  examples: |
+    - No
+    - I don't think so
+    - Not really
+    - I'm not interested

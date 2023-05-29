@@ -1,0 +1,81 @@
+
+version: "3.1"
+
+stories:
+  - story: User greets the chatbot
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - story: User says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: User asks for information about diabetes
+    steps:
+      - intent: ask_diabetes_info
+      - action: utter_ask_diabetes_info
+
+  - story: User asks about different types of diabetes
+    steps:
+      - intent: ask_diabetes_types
+      - action: utter_ask_diabetes_types
+
+  - story: User asks for management tips
+    steps:
+      - intent: ask_management_tips
+      - action: utter_ask_management_tips
+
+  - story: User asks about insulin
+    steps:
+      - intent: ask_insulin
+      - action: utter_ask_insulin
+
+  - story: User asks for diet recommendations
+    steps:
+      - intent: ask_diet_recommendation
+      - action: utter_ask_diet_recommendation
+
+  - story: User asks about exercise benefits
+    steps:
+      - intent: ask_exercise_benefits
+      - action: utter_ask_exercise_benefits
+
+  - story: User asks about glucose monitoring
+    steps:
+      - intent: ask_glucose_monitoring
+      - action: utter_ask_glucose_monitoring
+
+  - story: User expresses gratitude
+    steps:
+      - intent: thank
+      - action: utter_thank
+
+  - story: User denies a suggestion or option
+    steps:
+      - intent: deny
+      - action: utter_deny
+
+  - story: User asks for both diet recommendations and exercise benefits
+    steps:
+      - intent: ask_diet_recommendation
+      - action: utter_ask_diet_recommendation
+      - intent: ask_exercise_benefits
+      - action: utter_ask_exercise_benefits
+
+  - story: User asks for diabetes information and then expresses gratitude
+    steps:
+      - intent: ask_diabetes_info
+      - action: utter_ask_diabetes_info
+      - intent: thank
+      - action: utter_thank
+
+  - story: User greets the chatbot, asks about diabetes types, and says goodbye
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_diabetes_types
+      - action: utter_ask_diabetes_types
+      - intent: goodbye
+      - action: utter_goodbye

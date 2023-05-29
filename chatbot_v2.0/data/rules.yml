@@ -1,0 +1,55 @@
+
+- rule: Greet User
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: Goodbye User
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Provide Diabetes Information
+  steps:
+    - intent: ask_diabetes_info
+    - action: utter_ask_diabetes_info
+
+- rule: Provide Diabetes Types
+  steps:
+    - intent: ask_diabetes_types
+    - action: utter_ask_diabetes_types
+
+- rule: Provide Management Tips
+  steps:
+    - intent: ask_management_tips
+    - action: utter_ask_management_tips
+
+- rule: Provide Insulin Information
+  steps:
+    - intent: ask_insulin
+    - action: utter_ask_insulin
+
+- rule: Provide Diet Recommendation
+  steps:
+    - intent: ask_diet_recommendation
+    - action: utter_ask_diet_recommendation
+
+- rule: Provide Exercise Benefits
+  steps:
+    - intent: ask_exercise_benefits
+    - action: utter_ask_exercise_benefits
+
+- rule: Provide Glucose Monitoring Information
+  steps:
+    - intent: ask_glucose_monitoring
+    - action: utter_ask_glucose_monitoring
+
+- rule: Thank You
+  steps:
+    - intent: thank
+    - action: utter_thank
+
+- rule: Deny
+  steps:
+    - intent: deny
+    - action: utter_deny

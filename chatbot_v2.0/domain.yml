@@ -1,0 +1,55 @@
+
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_diabetes_info
+  - ask_diabetes_types
+  - ask_management_tips
+  - ask_insulin
+  - ask_diet_recommendation
+  - ask_exercise_benefits
+  - ask_glucose_monitoring
+  - thank
+  - deny
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you with your diabetes-related questions?"
+
+  utter_goodbye:
+    - text: "Goodbye! Take care and stay healthy."
+
+  utter_ask_diabetes_info:
+    - text: "Diabetes is a chronic condition that affects how your body regulates blood sugar levels. It occurs when your body either doesn't produce enough insulin or can't effectively use the insulin it produces."
+
+  utter_ask_diabetes_types:
+    - text: "There are several types of diabetes. The most common types are Type 1 diabetes and Type 2 diabetes. Type 1 diabetes is an autoimmune disease where the immune system mistakenly attacks and destroys the insulin-producing cells in the pancreas. Type 2 diabetes is a metabolic disorder characterized by insulin resistance or insufficient insulin production."
+
+  utter_ask_management_tips:
+    - text: "To manage diabetes, it's important to maintain a healthy lifestyle. Some tips include monitoring your blood sugar levels regularly, following a balanced diet, engaging in regular physical activity, taking prescribed medications or insulin as directed, and staying consistent with medical check-ups."
+
+  utter_ask_insulin:
+    - text: "Insulin is a hormone that helps regulate blood sugar levels in your body. It allows your cells to take in glucose from the bloodstream and use it for energy. There are different types of insulin, including rapid-acting, short-acting, intermediate-acting, and long-acting insulin. The type and dosage of insulin prescribed may vary depending on individual needs."
+
+  utter_ask_diet_recommendation:
+    - text: "A healthy diet plays a crucial role in managing diabetes. It's recommended to focus on consuming whole foods, including fruits, vegetables, lean proteins, whole grains, and healthy fats. Limiting the intake of sugary and processed foods is also important. It's best to work with a registered dietitian or healthcare professional to create a personalized meal plan based on your specific needs."
+
+  utter_ask_exercise_benefits:
+    - text: "Exercise offers numerous benefits for individuals with diabetes. It can help improve insulin sensitivity, manage weight, lower blood sugar levels, reduce the risk of heart disease, and enhance overall well-being. It's recommended to engage in a combination of aerobic exercises (such as brisk walking or cycling) and strength training exercises for optimal results."
+
+  utter_ask_glucose_monitoring:
+    - text: "Monitoring your blood glucose levels is essential for managing diabetes. There are various methods available, including self-monitoring using a glucometer, continuous glucose monitoring (CGM) systems, and flash glucose monitoring. Regular monitoring helps you understand how your body responds to different factors and allows you to make necessary adjustments to your diabetes management plan."
+
+  utter_thank:
+    - text: "You're welcome! If you have any more questions, feel free to ask."
+
+  utter_deny:
+    - text: "No problem. If you have any other inquiries in the future, feel free to reach out."
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
