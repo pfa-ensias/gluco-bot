@@ -1,0 +1,27 @@
+{% extends 'basepage.html' %}
+
+{%  block content %}
+
+<body>
+<h4>  Delete an Diet Record </h4>
+<div class = content>
+<div class = "form-group">
+<form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete diet record {{ object.id }}?</p>
+    {{ form }}
+    <input type="submit" value="Confirm">
+</form>
+<a class="btn btn-primary" href="{% url 'diet_list' %}">View All diet</a>
+
+</div>
+
+</div>
+</body>
+
+<style>
+.content{
+    padding-left: 30%;
+    padding-right: 30%;
+}
+</style>
+{% endblock %}

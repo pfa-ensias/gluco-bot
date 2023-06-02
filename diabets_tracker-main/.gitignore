@@ -1,0 +1,9 @@
+diabetesenv/
+db.bk
+./.DS_Store
+.DS_Store
+__pycache__
+db.sqlite3
+*.bk
+__pycache__/*
+diabetes/migrations/*

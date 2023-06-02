@@ -1,0 +1,42 @@
+{% extends 'basepage.html' %}
+
+{%  block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title> Log In </title>
+<h4>  Log In to Account </h4>
+</head>
+
+    <div class = 'content'>
+    <form action ="" method=POST>
+    {%  csrf_token %}
+
+  <!-- Email input -->
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address/User Name</label>
+    <input type="text" class="form-control" name = "username" aria-describedby="emailHelp">
+
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name = "password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+
+    </form>
+</div>
+
+<body>
+
+
+</body>
+<style>
+.content{
+    padding-left: 30%;
+    padding-right: 30%;
+}
+</style>
+{% endblock %}

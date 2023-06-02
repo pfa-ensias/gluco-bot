@@ -1,0 +1,65 @@
+{% extends 'basepage.html' %}
+
+
+{%  block content %}
+
+<link rel="stylesheet" href=" //cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script src=" //cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+
+
+<h4> View All Your Diet Records</h4>
+
+
+<table class="table resultlist" id = 'resulttable'>
+  <thead>
+    <tr>
+{#        <th scope="col">Job ID</th>#}
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Calories</th>
+        <th scope="col">Record Time</th>
+
+
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+    </tr>
+  </thead>
+<Tbody>
+        {%  for instance in object_list %}
+            <tr>
+{#                <td>{{ instance.id}}</td>#}
+                <td>{{ instance.food }}</td>
+                <td>{{ instance.quantity }}</td>
+                <td>{{ instance.calories }}</td>
+                <td>{{ instance.recordtime }}</td>
+
+
+                <td><a href="{% url 'diet_update' instance.pk %}">Update</a>
+                <td><a href="{% url 'diet_delete' instance.pk %}">Delete</a>
+
+                </td>
+          </tr>
+        {% endfor %}
+    </Tbody>
+</table>
+
+    <style>
+    .resultlist{
+        border: solid;
+    }
+    </style>
+
+
+<script>
+$(document).ready( function () {
+    $('#resulttable').DataTable({
+        "order": [[ 4, "desc" ]]
+    });
+} );
+
+</script>
+
+
+{% endblock %}
+

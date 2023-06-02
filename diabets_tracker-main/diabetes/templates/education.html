@@ -1,0 +1,24 @@
+{% extends 'basepage.html' %}
+{% block content %}
+
+<div class="container">
+     <h2>Diabetes Education Resources</h2>
+  <div class="row">
+    <div class="col">
+     Diabetes is a chronic condition that affects millions of people worldwide. It occurs when the body either doesn't produce enough insulin or doesn't use it effectively, resulting in high levels of sugar in the blood. Diabetes can have serious long-term health consequences, such as heart disease, nerve damage, and kidney failure. However, with proper diabetes education and management, individuals with diabetes can lead a healthy and fulfilling life. Education on healthy eating habits, regular physical activity, monitoring blood sugar levels, taking medications as prescribed, and managing stress can all help to keep diabetes under control. It is also important to regularly check in with healthcare providers to manage any potential complications and make adjustments to treatment plans. Managing Type II Diabetes can be challenging, but it's possible to take control of the disease through lifestyle changes. One of the first steps is to work towards achieving a healthy weight.
+        This can be done through a combination of regular exercise and being active, such as taking a brisk walk or bike ride every day. In addition to physical activity, healthy eating habits are crucial in managing blood sugar levels. A diet rich in whole grains, fruits, vegetables, lean protein, and healthy fats can help keep blood sugar levels stable. Regular monitoring of blood sugar levels is also important to identify any spikes or drops and make adjustments to treatment plans accordingly. With these lifestyle changes, it's possible to manage Type II Diabetes without relying solely on medication, although it's important to work with a healthcare provider to determine the best course of action for individual needs.</p>
+
+    </div>
+    <div class="col">
+       <h3>Useful Links</h3>
+  <ul>
+  {% for link in links %}
+    <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+  {% endfor %}
+  </ul>
+    </div>
+  </div>
+
+
+
+{% endblock %}
