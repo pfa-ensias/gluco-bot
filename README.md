@@ -10,5 +10,3 @@
 <li>Model Evaluation</li>
 <li>Building the Streamlit App</li>
 </ol>
-<p><strong>Let's get started!</strong></p>
-<p>Here is a working live demo :&nbsp;<a href="https://ehsanmns-diabets-app-7fc0wu.streamlit.app/">https://ehsanmns-diabets-app-7fc0wu.streamlit.app/</a></p>
