@@ -1,29 +1,19 @@
-import cv2
 import pytesseract
 import os
 from difflib import SequenceMatcher
 from PIL import Image
 import re
 import streamlit as st
-import numpy as np
 
 # Set the Tesseract OCR path
 pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
-# get grayscale image
-def get_grayscale(image):
-    return cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-# apply adaptive thresholding
-def thresholding(image):
-    return cv2.adaptiveThreshold(image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 115, 1)
-
 # Preprocessing the image to improve the OCR accuracy
 def preprocessing(image):
-    gray = get_grayscale(image)
-    return thresholding(gray)
+    gray = image.convert('L')  # Convert image to grayscale
+    return gray
 
-# apply regular expressions to get the words making up the ingredients
+# Apply regular expressions to get the words making up the ingredients
 def cleaning(text):
     text = re.sub('[*|\n|\|(|)|.]', ' ', text)
     text = re.sub('[}|{|\|/|,|:]', ' ', text)
@@ -40,10 +30,8 @@ def main():
 
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-        img = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
-        preprocessed_image = preprocessing(img)
-        cv2.imwrite("new.png", preprocessed_image)
-        text = pytesseract.image_to_string(Image.open(os.path.abspath('new.png')))
+        preprocessed_image = preprocessing(image)
+        text = pytesseract.image_to_string(preprocessed_image)
         ingredients = cleaning(text)
         ingredients = [x.lower() for x in ingredients]
 
