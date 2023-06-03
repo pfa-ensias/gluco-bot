@@ -1,12 +1,14 @@
 import cv2
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
 import os
 from difflib import SequenceMatcher
 from PIL import Image
 import re
 import streamlit as st
 import numpy as np
+
+# Set the Tesseract OCR path
+pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 # get grayscale image
 def get_grayscale(image):
@@ -30,8 +32,8 @@ def cleaning(text):
     return ingredients
 
 def main():
-    st.set_page_config(page_title="Ingredient Safety for a diabet", layout="centered")
-    st.title("Ingredient Safety for a diabet")
+    st.set_page_config(page_title="Ingredient Safety for a diabetic", layout="centered")
+    st.title("Ingredient Safety for a diabetic")
     st.write("Upload an image and check if it contains unsafe ingredients.")
 
     uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
