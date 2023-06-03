@@ -1,0 +1,29 @@
+{% extends 'basepage.html' %}
+
+{%  block content %}
+
+<body>
+<h4>  Add an Appointment Record </h4>
+<div class = content>
+<div class = "form-group">
+<form method = 'POST' >  {%  csrf_token %}
+
+    {{  form.as_p}}
+
+    <input class="btn btn-primary btn-lg btn-block"  type ='submit' value = 'Save' />
+</form>
+    <p></p>
+<a class="btn btn-secondary btn-lg btn-block" href="{% url 'appointments_list' %}">View All Appointments</a>
+
+</div>
+
+</div>
+</body>
+
+<style>
+.content{
+    padding-left: 30%;
+    padding-right: 30%;
+}
+</style>
+{% endblock %}

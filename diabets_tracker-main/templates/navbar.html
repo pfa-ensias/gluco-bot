@@ -1,0 +1,76 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" >Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+
+
+
+             {%  if user.is_authenticated %}
+
+  <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Add Records
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="nav-item nav-link" href="/diabetes/appointadd/">Add Appointment Record</a>
+                  <a class="nav-item nav-link" href="/diabetes/bloodsugaradd/">Add Blood Sugar Record</a>
+               <a class="nav-item nav-link" href="/diabetes/weightadd/">Add Weight Record</a>
+                <a class="nav-item nav-link" href="/diabetes/dietadd/">Add Diet Record</a>
+
+                 <a class="nav-item nav-link" href="/diabetes/exerciseadd/">Add Exercise Record</a>
+
+
+
+
+        </div>
+      </li>
+
+                 <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          View Records
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="nav-item nav-link" href="/diabetes/appointlist/">View Appointment Record</a>
+                  <a class="nav-item nav-link" href="/diabetes/bloodsugarlist/">View Blood Sugar Record</a>
+            <a class="nav-item nav-link" href="/diabetes/weightlist/">View Weight Record</a>
+            <a class="nav-item nav-link" href="/diabetes/dietlist/">View Diet Record</a>
+
+                 <a class="nav-item nav-link" href="/diabetes/exerciselist/">View Exercise Record</a>
+
+
+
+
+        </div>
+      </li>
+ <a class="nav-item nav-link"  href="{% url 'diabetes_education' %} ">Education Content</a>
+ </ul>
+
+
+     <ul class="navbar-nav ">
+
+    <a class="nav-item nav-link" href="/members/logout_user/">Log Out</a>
+
+        {%  else %}
+                   <a class="nav-item nav-link" href = "/members/login_user/">Log In</a>
+                         <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                  <a class="nav-item nav-link"  href="{% url 'diabetes_education' %} ">Education Content</a>
+
+
+        {% endif %}
+
+ </ul>
+
+
+
+
+  </div>
+</nav>
+
+

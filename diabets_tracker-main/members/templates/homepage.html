@@ -1,0 +1,189 @@
+{% extends 'basepage.html' %}
+
+{%  block content %}
+
+<center>
+<style>
+  h3 {
+    color: red;
+    font-weight: bold;
+  }
+
+    .red-bold {
+    color: red;
+    font-weight: bold;
+  }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+{{ form }}
+
+    {%  if user.is_authenticated %}
+            <h2>Welcome come to your Health Tracker, {{ request.user }}!</h2>
+
+        {%  if close_appoint_list %}
+<p></p>
+            <h3> You have Appointment within 7 days! </h3>
+
+              <div class="col-sm-6 col-md-6">
+            <div class="panel panel-primary watch">
+             <table class="table table-bordered table-condensed">
+			<thead>
+			    <tr>
+                    <th>Number</th>
+                    <th>Date and Time</th>
+                    <th>Hospital</th>
+                    <th>Provider</th>
+                </tr>
+			</thead>
+
+
+
+            <tbody class="red-bold">
+
+			{% for appoint in close_appoint_list|slice:5 %}
+			<tr>
+			<td>{{ forloop.counter }}</td>
+          <td>{{ appoint.appointmenttime }}</td>
+            <td>{{ appoint.hospital }}</td>
+            <td>{{ appoint.provider }}</td>
+        {% endfor %}
+
+			</tr>
+        </tbody>
+             </table>
+            </div>
+              </div>
+            {% endif %}
+
+<br>
+  <div class="col-sm-6 col-md-6">
+            <div class="panel panel-primary watch">
+              <div class="panel-heading"><h4 class="panel-title">My Appointment </h4></div>
+	       <div class="panel-body" style="height:auto; overflow:auto; min-height: 350px; overflow-y: auto;
+height: 350px;  max-height: 100%;">
+
+                  <table class="table table-bordered table-condensed">
+			<thead>
+			    <tr>
+                    <th>Number</th>
+                    <th>Appointment Time</th>
+                <th>Hospital</th>
+                    <th>Provider</th>
+                </tr>
+			</thead><tbody>
+
+			{% for appoint in appointment_list|slice:5 %}
+			<tr>
+			<td>{{ forloop.counter }}</td>
+          <td>{{ appoint.appointmenttime }}</td>
+            <td>{{ appoint.hospital }}</td>
+            <td>{{ appoint.provider }}</td>
+
+			</tr>
+
+			{% empty %}
+			    <tr><td colspan=5>None</td></tr>
+			{% endfor %}
+			<tbody>
+		    </table>
+
+	      </div>
+            </div>
+          </div>
+
+
+
+  <div class="col-sm-6 col-md-6">
+            <div class="panel panel-primary watch">
+              <div class="panel-heading"><h4 class="panel-title">My BloodSugar  </h4></div>
+	       <div class="panel-body" style="height:auto; overflow:auto; min-height: 350px; overflow-y: auto;
+height: 350px;  max-height: 100%;">
+
+                  <table class="table table-bordered table-condensed">
+			<thead>
+			    <tr>
+                     <th>Number</th>
+                    <th>Record Time</th>
+                    <th>Blood Sugar Measure (mmol/L)</th>
+
+                </tr>
+			</thead>
+			<tbody>
+
+			{% for object in bloodsugar_list|slice:5 %}
+			<tr>
+			   <td>{{ forloop.counter }}</td>
+            <td>{{ object.measuretime }}</td>
+            <td>{{ object.bloodsugarmeasure }}</td>
+
+			</tr>
+
+			{% empty %}
+			    <tr><td colspan=5>None</td></tr>
+			{% endfor %}
+			<tbody>
+		    </table>
+
+	      </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-md-6">
+            <div class="panel panel-primary watch">
+              <div class="panel-heading"><h4 class="panel-title">My Weight </h4></div>
+	       <div class="panel-body" style="height:auto; overflow:auto; min-height: 350px; overflow-y: auto;
+height: 350px;  max-height: 100%;">
+
+                  <table class="table table-bordered table-condensed">
+			<thead>
+			    <tr>
+                     <th>Number</th>
+                    <th>Record Time</th>
+                    <th>Weight (Kg)</th>
+                </tr>
+			</thead>
+			<tbody>
+
+	{% for object in weight_list|slice:5 %}
+			<tr>
+			<td>{{ forloop.counter }}</td>
+            <td>{{ object.measuretime }}</td>
+            <td>{{ object.weight }}</td>
+
+			</tr>
+
+			{% empty %}
+			    <tr><td colspan=5>None</td></tr>
+			{% endfor %}
+			<tbody>
+		    </table>
+
+	      </div>
+            </div>
+          </div>
+
+
+
+        {%  else %}
+
+    {% load static %}
+    <img src="{% static 'welcome2.jpg' %}" alt="My image">
+        <h2>Please Log In to the App</h2>
+
+
+        <div  class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-primary" onclick= "location.href= '/members/login_user/'" type="button">Log In Here</button>
+  <button class="btn btn-primary" onclick= "location.href= '/members/register/'" type="button">Register User</button>
+    </div>
+
+
+    {% endif %}
+
+
+
+
+</center>
+{% endblock %}

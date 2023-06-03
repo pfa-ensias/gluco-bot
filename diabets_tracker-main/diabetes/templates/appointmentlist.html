@@ -1,0 +1,61 @@
+{% extends 'basepage.html' %}
+
+
+{%  block content %}
+
+<link rel="stylesheet" href=" //cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script src=" //cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+
+
+<h4> View All Your Records</h4>
+
+
+<table class="table resultlist" id = 'resulttable'>
+  <thead>
+    <tr>
+{#        <th scope="col">Job ID</th>#}
+        <th scope="col">Hostpial</th>
+        <th scope="col">Provider</th>
+        <th scope="col">Appointmenttime</th>
+
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+    </tr>
+  </thead>
+<Tbody>
+        {%  for instance in object_list %}
+            <tr>
+{#                <td>{{ instance.id}}</td>#}
+                <td>{{ instance.hospital }}</td>
+                <td>{{ instance.provider }}</td>
+                <td>{{ instance.appointmenttime }}</td>
+
+                <td><a href="{% url 'appoint_update' instance.pk %}">Update</a>
+                <td><a href="{% url 'appoint_delete' instance.pk %}">Delete</a>
+
+                </td>
+          </tr>
+        {% endfor %}
+    </Tbody>
+</table>
+
+    <style>
+    .resultlist{
+        border: solid;
+    }
+    </style>
+
+
+<script>
+$(document).ready( function () {
+    $('#resulttable').DataTable({
+        "order": [[ 3, "asc" ]]
+    });
+} );
+
+</script>
+
+
+{% endblock %}
+

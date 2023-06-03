@@ -1,0 +1,25 @@
+{% extends 'basepage.html' %}
+
+{%  block content %}
+
+<body>
+<h4>  Add a Diet Record </h4>
+<div class = content>
+<div class = "form-group">
+<form method = 'POST' >  {%  csrf_token %}
+
+    {{  form.as_p}}
+    <input class="btn btn-primary" type ='submit' value = 'Save' />
+</form>
+</div>
+
+</div>
+</body>
+
+<style>
+.content{
+    padding-left: 30%;
+    padding-right: 30%;
+}
+</style>
+{% endblock %}
