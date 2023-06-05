@@ -54,6 +54,12 @@ def main():
     input_data = np.array([high_bp, high_chol, chol_check, bmi, smoker, stroke, heart_disease,
                           physical_activity, fruits, veggies, heavy_alcohol, healthcare, no_doc_cost,
                           gen_health, mental_health, phys_health, diff_walk, sex, age, education, income]).reshape(1, -1)
+    
+    # submitted = st.form_submit_button("Is diabetic ?")
+    
+    # if submitted:
+    #     #inclure dakchi
+        
     prediction = model.predict(input_data)[0]
 
     # Displaying the prediction
