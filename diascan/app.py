@@ -55,18 +55,18 @@ def main():
                           physical_activity, fruits, veggies, heavy_alcohol, healthcare, no_doc_cost,
                           gen_health, mental_health, phys_health, diff_walk, sex, age, education, income]).reshape(1, -1)
     
-    # submitted = st.form_submit_button("Is diabetic ?")
+     submitted = st.form_submit_button("Is diabetic ?")
     
-    # if submitted:
-    #     #inclure dakchi
+     if submitted:
+       
         
-    prediction = model.predict(input_data)[0]
+        prediction = model.predict(input_data)[0]
 
     # Displaying the prediction
-    if prediction == 0:
-        st.success('Congratulations! Based on the information you provided, it seems like you do not have diabetes.')
-    else:
-        st.error('Sorry, based on the information you provided, it seems like you may have diabetes. We recommend consulting with a healthcare professional to discuss your options.')
+        if prediction == 0:
+            st.success('Congratulations! Based on the information you provided, it seems like you do not have diabetes.')
+        else:
+            st.error('Sorry, based on the information you provided, it seems like you may have diabetes. We recommend consulting with a healthcare professional to discuss your options.')
 
 
 
